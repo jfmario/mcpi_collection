@@ -21,3 +21,5 @@ with open ( os.path.join ( os.path.dirname ( __file__ ), 'data', 'locations',
     location = json.loads ( f.read () )
     
 mc.player.setTilePos ( location ['x'], location ['y'], location ['z'] )
+
+
