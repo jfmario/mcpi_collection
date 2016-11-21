@@ -1,14 +1,14 @@
 '''
 This file teleports you to a location saved under a given name.
 
-python goto_location.py -n <name>
+python goto_location.py <name>
 '''
 
 import argparse, json, os
 from mcpi.minecraft import Minecraft
 
 parser = argparse.ArgumentParser ()
-parser.add_argument ( "-n", action='store', dest='name', type=str,
+parser.add_argument ( "name", metavar='N', type=str,
     help="The name of the location that you want to goto." )
     
 args = parser.parse_args ()

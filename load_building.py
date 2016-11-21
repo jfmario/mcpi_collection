@@ -1,7 +1,7 @@
 '''
 This file creates a saved building where you are.
 
-python load_building.py -n <name>
+python load_building.py <name>
 '''
 
 import argparse, json, os
@@ -9,7 +9,7 @@ from mcpi.minecraft import Minecraft
 
 
 parser = argparse.ArgumentParser ()
-parser.add_argument ( "-n", action='store', dest='name', type=str,
+parser.add_argument ( "name", metavar='N', type=str,
     help="The name of the building you want to recreate." )
 args = parser.parse_args ()
 

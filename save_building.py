@@ -1,14 +1,14 @@
 '''
 This file asks you to go to two corners of a region to save it.
 
-python save_building.py -n <name>
+python save_building.py <name>
 '''
 
 import argparse, json, os
 from mcpi.minecraft import Minecraft
 
 parser = argparse.ArgumentParser ()
-parser.add_argument ( "-n", action='store', dest='name', type=str,
+parser.add_argument ( "name", metavar='N', type=str,
     help="The name that you want to save this building as." )
 args = parser.parse_args ()
 

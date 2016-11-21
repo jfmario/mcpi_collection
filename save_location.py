@@ -1,14 +1,14 @@
 '''
 This file saves your current location under a given name.
 
-python save_location.py -n <name>
+python save_location.py <name>
 '''
 
 import argparse, json, os
 from mcpi.minecraft import Minecraft
 
 parser = argparse.ArgumentParser ()
-parser.add_argument ( "-n", action='store', dest='name', type=str,
+parser.add_argument ( "name", metavar='N', type=str,
     help="The name that you want to save this location as." )
     
 args = parser.parse_args ()
