@@ -1,11 +1,18 @@
+'''
+This file asks you to go to two corners of a region to save it.
 
-import os, sys
-sys.path.append ( r'C:\Users\student\Documents\mc_server\Minecraft Tools\Minecraft Tools\minecraftPythonAPI\py3minepi-master' )
+python save_building.py -n <name>
+'''
 
+import argparse, json, os
 from mcpi.minecraft import Minecraft
-mc = Minecraft.create ()
 
-import pickle
+parser = argparse.ArgumentParser ()
+parser.add_argument ( "-n", action='store', dest='name', type=str,
+    help="The name that you want to save this building as." )
+args = parser.parse_args ()
+
+mc = Minecraft.create ()
 
 def sort_pair ( value1, value2 ):
     if value1 > value2:
@@ -57,9 +64,8 @@ z2 = pos2.z
 
 structure = copy_structure ( x1, y1, z1, x2, y2, z2 )
 
-filename = input ( "Structure Name:" )
 full_filename = os.path.join ( os.path.dirname ( __file__ ), 'data',
-    'structures', filename + '.mcbdg' )
+    'structures', args.name + '.json' )
 
-with open ( full_filename, 'wb' ) as ob:
-    ob.write ( pickle.dumps ( structure ) )
+with open ( full_filename, 'w' ) as o:
+    o.write ( json.dumps ( structure ) )

@@ -1,11 +1,19 @@
+'''
+This file creates a saved building where you are.
 
-import os, sys
-sys.path.append ( r'C:\Users\student\Documents\mc_server\Minecraft Tools\Minecraft Tools\minecraftPythonAPI\py3minepi-master' )
+python load_building.py -n <name>
+'''
 
+import argparse, json, os
 from mcpi.minecraft import Minecraft
-mc = Minecraft.create ()
 
-import pickle
+
+parser = argparse.ArgumentParser ()
+parser.add_argument ( "-n", action='store', dest='name', type=str,
+    help="The name of the building you want to recreate." )
+args = parser.parse_args ()
+
+mc = Minecraft.create ()
 
 def build_structure ( x, y, z, structure ):
 
@@ -28,12 +36,11 @@ def build_structure ( x, y, z, structure ):
 
         x = x_start
 
-filename = input ( "Structure Name:" )
 full_filename = os.path.join ( os.path.dirname ( __file__ ), 'data',
-    'structures', filename + '.mcbdg' )
+    'structures', args.name + '.json' )
 
-with open ( full_filename, 'rb' ) as fb:
-    structure = pickle.loads ( fb.read () )
+with open ( full_filename, 'r' ) as f:
+    structure = json.loads ( f.read () )
 
 pos = mc.player.getTilePos ()
 x = pos.x
