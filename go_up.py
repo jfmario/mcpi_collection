@@ -8,7 +8,7 @@ import argparse
 from mcpi.minecraft import Minecraft
 
 parser = argparse.ArgumentParser ()
-parser.add_argument ( "-y", action='store', dest='y', type=int, default=5
+parser.add_argument ( "-y", action='store', dest='y', type=int, default=5,
     help="How high you want to go. Defaults to 5" )
 args = parser.parse_args ()
 

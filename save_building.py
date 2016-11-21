@@ -48,14 +48,14 @@ def copy_structure ( x1, y1, z1, x2, y2, z2 ):
 
     return structure
 
-input ( "Move to position 1 and press Enter" )
+raw_input ( "Move to position 1 and press Enter" )
 
 pos1 = mc.player.getTilePos ()
 x1 = pos1.x
 y1 = pos1.y
 z1 = pos1.z
 
-input ( "Move to position 2 and press Enter" )
+raw_input ( "Move to position 2 and press Enter" )
 
 pos2 = mc.player.getTilePos ()
 x2 = pos2.x

@@ -8,6 +8,6 @@ from mcpi.minecraft import Minecraft
 
 mc = Minecraft.create ()
 
-message = input ( "Message: " )
+message = raw_input ( "Message: " )
 mc.postToChat ( message )
 
