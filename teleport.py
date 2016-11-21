@@ -2,7 +2,7 @@
 This file moves you to a specified location in x/y/z coordinates.
 Note that the Y-coordinate is up and down.
 
-python -x X -y Y -z Z
+python teleport.py -x X -y Y -z Z
 '''
 
 import argparse
