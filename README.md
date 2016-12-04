@@ -55,7 +55,7 @@ python teleport.py -x 120 -y 20 -z 120
 ## `save_location.py` #
 
 ```
-python save_location.py -n <name>
+python save_location.py <name>
 ```
 
 This program saves your current location under a given name.
@@ -72,7 +72,7 @@ python save_location.py -n myhome
 ## `goto_location.py` #
 
 ```
-python goto_location.py -n <name>
+python goto_location.py <name>
 ```
 
 This program teleports you to a saved location.
@@ -86,7 +86,7 @@ python goto_location.py myhome
 ## `save_building.py` #
 
 ```
-python save_building.py -n <name>
+python save_building.py <name>
 ```
 
 This program will prompt you to go one corner of a region and hit ENTER,
@@ -96,7 +96,7 @@ those two corders will be saved to a JSON file under `data/structures/`.
 ## `load_building.py` #
 
 ```
-python load_building.py -n <name>
+python load_building.py <name>
 ```
 
 This program will recreate a saved building starting from your current location.
